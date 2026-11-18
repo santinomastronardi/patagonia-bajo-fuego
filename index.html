@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patagonia bajo fuego · PDI Periodismo de Investigación</title>
+  <meta name="description" content="Investigación periodística sobre incendios forestales en la Patagonia. Nota, shorts, entrevistas y material adicional.">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="icon" href="assets/logo/logo-pdi.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>try{if(sessionStorage.getItem('pdi-intro')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('no-intro')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip" href="#nota">Saltar al contenido</a>
+
+  <!-- 1. Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <img class="loader__base" src="assets/logo/logo-pdi.png" alt="">
+      <img class="loader__fire" src="assets/logo/logo-pdi.png" alt="">
+    </div>
+    <button class="loader__skip" type="button">Saltar intro <kbd>Esc</kbd></button>
+  </div>
+
+  <!-- 2. Header -->
+  <header class="header" id="header">
+    <a class="header__logo" href="#top" aria-label="Inicio"><img src="assets/logo/logo-pdi.png" alt="PDI Periodismo de Investigación" width="68" height="48"></a>
+    <button class="header__toggle" type="button" aria-expanded="false" aria-controls="nav"><span></span><span class="sr">Menú</span></button>
+    <nav class="nav" id="nav" aria-label="Secciones">
+      <a href="#nota">Nota principal</a>
+      <a href="#shorts">Shorts</a>
+      <a href="#entrevistas">Entrevistas</a>
+      <a href="#material">Material adicional</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+    <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+  </header>
+
+  <main id="top">
+    <!-- 3. Nota principal -->
+    <article class="nota" id="nota">
+      <header class="hero" id="hero"></header>
+      <div class="nota__body" id="nota-body"></div>
+    </article>
+
+    <!-- 4. Shorts -->
+    <section class="shorts" id="shorts" aria-labelledby="shorts-title">
+      <div class="section-head reveal">
+        <p class="kicker" id="shorts-serie"></p>
+        <h2 id="shorts-title">La investigación en <em>siete</em> shorts</h2>
+      </div>
+      <div class="carousel" id="carousel" tabindex="0" aria-roledescription="carrusel" aria-label="Shorts. Usá las flechas para navegar.">
+        <div class="carousel__track" id="track"></div>
+        <button class="carousel__arrow prev" type="button" aria-label="Short anterior">&#8592;</button>
+        <button class="carousel__arrow next" type="button" aria-label="Short siguiente">&#8594;</button>
+      </div>
+      <div class="shorts__info" aria-live="polite">
+        <p class="shorts__cap" id="short-cap"></p>
+        <h3 class="shorts__title" id="short-title"></h3>
+        <p class="shorts__desc" id="short-desc"></p>
+      </div>
+      <div class="shorts__dots" id="dots" role="tablist" aria-label="Elegir short"></div>
+      <div class="podcast reveal" id="podcast"></div>
+    </section>
+
+    <!-- 5. Entrevistas -->
+    <section class="entrevistas" id="entrevistas" aria-labelledby="ent-title">
+      <div class="section-head reveal">
+        <p class="kicker">Las voces</p>
+        <h2 id="ent-title">Entrevistas</h2>
+      </div>
+      <div class="covers" id="covers"></div>
+    </section>
+
+    <!-- 6. Material adicional -->
+    <section class="material" id="material" aria-labelledby="mat-title">
+      <div class="section-head reveal">
+        <p class="kicker">Archivo</p>
+        <h2 id="mat-title">Material adicional</h2>
+      </div>
+      <div class="filters" id="filters" role="toolbar" aria-label="Filtrar material"></div>
+      <div class="material__grid" id="material-grid"></div>
+    </section>
+
+    <!-- 7. Equipo -->
+    <section class="equipo" id="equipo" aria-labelledby="eq-title">
+      <div class="section-head reveal">
+        <p class="kicker">Sobre la investigación</p>
+        <h2 id="eq-title">Equipo</h2>
+      </div>
+      <div class="equipo__grid" id="equipo-body"></div>
+    </section>
+  </main>
+
+  <!-- 8. Footer -->
+  <footer class="footer">
+    <img src="assets/logo/logo-pdi.png" alt="PDI Periodismo de Investigación" width="96" height="68">
+    <p id="footer-text"></p>
+    <p class="footer__small">Fotos de Wikimedia Commons bajo licencia CC BY-SA, con autoría indicada en cada imagen.</p>
+  </footer>
+
+  <!-- Modal entrevistas -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="modal__close" type="button" aria-label="Cerrar">×</button>
+    <div class="modal__content" id="modal-content"></div>
+  </dialog>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <button class="modal__close" type="button" aria-label="Cerrar">×</button>
+    <figure id="lightbox-fig"></figure>
+  </dialog>
+
+  <script src="js/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

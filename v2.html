@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Patagonia bajo fuego · PDI Periodismo de Investigación</title>
+  <meta name="description" content="Investigación periodística sobre incendios forestales en la Patagonia. Nota, shorts, entrevistas y material adicional.">
+  <meta name="theme-color" content="#F1EEE8">
+  <link rel="icon" href="assets/logo/logo-pdi.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&family=Caveat:wght@500;700&family=Big+Shoulders+Stencil+Display:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/v2.css">
+  <script>try{if(sessionStorage.getItem('pdi-intro-v2')||matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('no-intro')}catch(e){}</script>
+</head>
+<body>
+  <a class="skip" href="#nota">Saltar al contenido</a>
+
+  <!-- Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__glow"></div>
+    <div class="loader__embers"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <span class="js-logo loader__logo"></span>
+    <div class="loader__foot"><span>Patagonia bajo fuego</span><span class="loader__bar"><i></i></span><span>UADE · 2026</span></div>
+    <button class="loader__skip" type="button">Saltar <kbd>Esc</kbd></button>
+  </div>
+
+  <!-- Nav flotante -->
+  <header class="pill" id="pill">
+    <a class="pill__logo js-logo" href="#top" aria-label="PDI Periodismo de Investigación — inicio"></a>
+    <nav class="pill__nav" id="nav" aria-label="Secciones">
+      <a href="#nota">Nota</a>
+      <a href="#shorts">Shorts</a>
+      <a href="#entrevistas">Entrevistas</a>
+      <a href="#material">Material</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+    <a class="pill__cta" href="#nota">Leer la nota</a>
+    <button class="pill__toggle" type="button" aria-expanded="false" aria-controls="nav"><span></span><span class="sr">Menú</span></button>
+  </header>
+  <div class="progress" aria-hidden="true"><span id="progress"></span></div>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" id="hero"></section>
+
+    <!-- Frase que se enciende con el scroll -->
+    <section class="statement" id="statement" aria-label="La idea central"><div class="statement__sticky"><p class="statement__text" id="statement-text"></p></div></section>
+
+    <!-- Nota -->
+    <article class="nota" id="nota">
+      <header class="nota__head" id="nota-head"></header>
+      <div class="nota__body" id="nota-body"></div>
+    </article>
+
+    <!-- Shorts -->
+    <section class="shorts" id="shorts" aria-labelledby="shorts-title">
+      <div class="head">
+        <p class="label"><span class="num">02</span> Shorts · <span id="shorts-serie"></span></p>
+        <h2 id="shorts-title">La investigación,<br><span class="light">en siete shorts.</span></h2>
+      </div>
+      <div class="coverflow" id="coverflow" tabindex="0" aria-roledescription="carrusel" aria-label="Shorts. Usá las flechas para navegar.">
+        <div class="coverflow__stage" id="stage"></div>
+      </div>
+      <div class="shorts__nav">
+        <button class="round" type="button" data-dir="-1" aria-label="Short anterior">←</button>
+        <p class="shorts__info" id="short-info" aria-live="polite"></p>
+        <button class="round" type="button" data-dir="1" aria-label="Short siguiente">→</button>
+      </div>
+      <div class="podcast" id="podcast"></div>
+    </section>
+
+    <!-- Entrevistas -->
+    <section class="entrevistas" id="entrevistas" aria-labelledby="ent-title">
+      <div class="head">
+        <p class="label"><span class="num">03</span> Las voces</p>
+        <h2 id="ent-title">Cuatro entrevistas.<br><span class="light">Dos escritas, dos en video.</span></h2>
+      </div>
+      <div class="bento" id="bento"></div>
+    </section>
+
+    <!-- Material -->
+    <section class="material" id="material" aria-labelledby="mat-title">
+      <div class="head">
+        <p class="label"><span class="num">04</span> Material adicional</p>
+        <h2 id="mat-title">Para entender el fuego.</h2>
+      </div>
+      <div class="info3" id="info3"></div>
+      <div class="links">
+        <p class="label">Enlaces</p>
+        <ol class="links__list" id="links"></ol>
+      </div>
+    </section>
+
+    <!-- Cierre -->
+    <section class="closing" id="closing"></section>
+
+    <!-- Equipo -->
+    <section class="equipo" id="equipo" aria-labelledby="eq-title"></section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <!-- Hoja de entrevista -->
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <button class="sheet__close" type="button" aria-label="Cerrar">×</button>
+    <div class="sheet__content" id="sheet-content"></div>
+  </dialog>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Infografía ampliada">
+    <button class="sheet__close" type="button" aria-label="Cerrar">×</button>
+    <figure id="lightbox-fig"></figure>
+  </dialog>
+
+  <script src="js/content.js"></script>
+  <script src="js/v2.js"></script>
+</body>
+</html>
